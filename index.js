@@ -12,13 +12,14 @@ const Client = new Discord.Client({intents: [
 Client.on("ready", async () => {
     console.log("Index en cour...");
     console.log("Les GuIx");
+    console.log("Bot connecté sur " + Client.guilds.cache.size + " serveur !");
 
     function randomStatus() {
         let status = ["EN DEVELOPPEMENT", "Les GuIx", "!help"]
         let rstatus = Math.floor(Math.random() * status.length);
 
         Client.user.setActivity(status[rstatus], {type: "WATCHING"});
-    }; setImmediate(randomStatus, 2000)
+    }; setImmediate(randomStatus, 1000)
 
     Client.application.commands.create(data);
 
@@ -68,10 +69,10 @@ Client.login(process.env.TOKEN);
 
 Client.on("messageCreate", message => {
     if(message.content[0] === prefix) {
-        if(message.content === prefix + "Bienvenu"){
-            message.channel.send("TEST de message privé")
+        if(message.content === prefix + "Bienvenue"){
+            message.channel.send("MP correctement envoyez")
             message.author.createDM().then(channeL => {
-                channeL.send("Bienvenu sur Les GuIx je te laisse faire part sur le règlement du serveur Discord !");
+                channeL.send("Bienvenue sur Les GuIx je te laisse faire part du le règlement du serveur Discord !");
             }).catch(console.error);
         }
     }
@@ -79,7 +80,7 @@ Client.on("messageCreate", message => {
 
 Client.on("guildMemberAdd", member => {
     member.createDM().then(channeL => {
-        return channel.send("Bienvenu sur Les GuIx je te laisse faire part sur le règlement du serveur Discord ! " + member.displayName);
+        return channel.send("Bienvenue sur Les GuIx je te laisse faire part sur le règlement du serveur Discord ! " + member.displayName);
     }).catch(console.error);
 });
 
@@ -197,7 +198,8 @@ Client.on("messageCreate", message => {
             .setAuthor("GuIx", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ")
             .setDescription("Commandes")
             .setThumbnail("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ")
-
+            .addField("!Bienvenue", "Permet de recevoir un MP de Les GuIx")
+            .addField("")
 
         message.reply({ embeds: [embed]});
     }
