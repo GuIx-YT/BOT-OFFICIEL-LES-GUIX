@@ -198,8 +198,7 @@ Client.on("messageCreate", message => {
             .setAuthor("GuIx", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ", "https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ")
             .setDescription("Commandes")
             .setThumbnail("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.pinimg.com%2F236x%2F82%2Fb8%2Fa0%2F82b8a0f65d49e7cef984b1e235e3ec1d.jpg&imgrefurl=https%3A%2F%2Fwww.pinterest.fr%2Fqcouvreur%2Frenard-logo%2F&tbnid=46j5lmS9WGgn6M&vet=12ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ..i&docid=eagXZcY0GvazDM&w=236&h=236&q=logo%20de%20renard%20gaming&ved=2ahUKEwjxodjfuPP4AhULWhoKHTxbDWYQMygBegUIARDOAQ")
-            .addField("!Bienvenue", "Permet de recevoir un MP de Les GuIx")
-            .addField("")
+            .addField("!Bienvenue", "Permet de recevoir un MP de Les GuIx");
 
         message.reply({ embeds: [embed]});
     }
