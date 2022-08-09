@@ -12,14 +12,14 @@ const Client = new Discord.Client({intents: [
 Client.on("ready", async () => {
     console.log("Index en cour...");
     console.log("Les GuIx");
-    
+
     function randomStatus() {
         let status = ["EN DEVELOPPEMENT", "Les GuIx", "!help"]
         let rstatus = Math.floor(Math.random() * status.length);
 
         Client.user.setActivity(status[rstatus], {type: "WATCHING"});
     }; setImmediate(randomStatus, 2000)
-    
+
     Client.application.commands.create(data);
 
     Client.guilds.cache.get("916666130209312768").commands.create(data);

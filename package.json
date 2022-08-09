@@ -1,4 +1,10 @@
 {
+  "name": "Les GuIx",
+  "version": "1.0.1",
+  "description": "BOT Discord Les GuIx",
+  "main": "index.js",
+  "author": "GuIx",
+  "license": "Les GuIx",
   "dependencies": {
     "discord.js": "^13.8.1"
   },
