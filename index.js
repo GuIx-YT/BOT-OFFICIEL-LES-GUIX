@@ -2,7 +2,6 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 
 const owenerID = "741431851603722320";
 
-const Canvas = require("canvas");
 const Discord = require("discord.js");
 const Client = new Discord.Client({intents: [
     Discord.Intents.FLAGS.GUILDS,
