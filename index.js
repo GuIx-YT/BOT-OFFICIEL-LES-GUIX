@@ -2,11 +2,13 @@ const { SlashCommandBuilder } = require("@discordjs/builders");
 
 const owenerID = "741431851603722320";
 
+const Canvas = require("canvas");
 const Discord = require("discord.js");
 const Client = new Discord.Client({intents: [
     Discord.Intents.FLAGS.GUILDS,
     Discord.Intents.FLAGS.GUILD_MESSAGES,
-    Discord.Intents.FLAGS.DIRECT_MESSAGES
+    Discord.Intents.FLAGS.DIRECT_MESSAGES,
+    Discord.Intents.FLAGS.GUILD_MEMBERS
 ]});
 
 Client.on("ready", async () => {
@@ -19,7 +21,7 @@ Client.on("ready", async () => {
         let rstatus = Math.floor(Math.random() * status.length);
 
         Client.user.setActivity(status[rstatus], {type: "WATCHING"});
-    }; setImmediate(randomStatus, 1000)
+    }; setImmediate(randomStatus, 30)
 
     Client.application.commands.create(data);
 
@@ -59,6 +61,17 @@ Client.on("ready", async () => {
         );
 
     Client.channels.cache.get("939842905194000424").send({content: "menu de selection de note: ", components: [row]});*/
+});
+
+Client.on("guildMemberAdd", member => {
+    console.log("Un Membre vient d'arrivé - " + member.displayName);
+    Client.channels.cache.get('937744369396633630').send("Salut <@" + member.id + ">, Bienvenus sur **Les GuIx** !");
+    member.roles.add('925801759434231898');
+});
+
+Client.on("guildMemberRemove", member => {
+    console.log("Un Membre vient de quitté - " + member.displayName);
+    Client.channels.cache.get('1007620489033809971').send("**" + member.displayName + "** Vient de prendre son départ 👋");
 });
 
 var nbTicket = 0;
