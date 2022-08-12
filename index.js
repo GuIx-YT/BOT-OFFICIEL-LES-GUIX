@@ -66,6 +66,10 @@ Client.on("guildMemberAdd", member => {
     console.log("Un Membre vient d'arrivé - " + member.displayName);
     Client.channels.cache.get('937744369396633630').send("Salut <@" + member.id + ">, Bienvenus sur **Les GuIx** !");
     member.roles.add('925801759434231898');
+
+    member.createDM().then(channeL => {
+        return channel.send("Bienvenue <@" + member.id + "> sur Les GuIx je te laisse faire part sur le règlement du serveur Discord !");
+    }).catch(console.error);
 });
 
 Client.on("guildMemberRemove", member => {
@@ -88,12 +92,6 @@ Client.on("messageCreate", message => {
             }).catch(console.error);
         }
     }
-});
-
-Client.on("guildMemberAdd", member => {
-    member.createDM().then(channeL => {
-        return channel.send("Bienvenue sur Les GuIx je te laisse faire part sur le règlement du serveur Discord ! " + member.displayName);
-    }).catch(console.error);
 });
 
 var data = new SlashCommandBuilder()
