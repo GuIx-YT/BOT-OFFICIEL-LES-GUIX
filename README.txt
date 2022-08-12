@@ -1,2 +1,4 @@
 # BOT-OFFICIEL-LES-GUIX
 LES GUIX OFFICIEL
+
+Version du bot actuel 1.0.2
